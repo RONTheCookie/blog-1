@@ -37,7 +37,7 @@ router.get('/github/callback', async (req, res) => {
       id: data.id,
       avatar_url: data.avatar_url,
       username: data.username,
-      created_at: data.created_at,
+      created_at: Date.now(),
       location: data.location,
       flags: [],
       email: primaryEmail
