@@ -27,11 +27,11 @@ router.post('/', async (req, res) => {
     title: safeTitle,
     subtitle: req.body.subtitle ? sanitize(req.body.subtitle, { allowedTags: [], allowedAttributes: {} }) : null,
     content: sanitize(req.body.content, { allowedTags: [], allowedAttributes: {} }),
-    createdAt: Date.now(),
-    dateString: [date.getFullYear(), date.getMonth() + 1, date.getDate()].join('-'),
+    created_at: Date.now(),
+    date_string: [date.getFullYear(), date.getMonth() + 1, date.getDate()].join('-'),
     slug: slugify(safeTitle),
-    authorId: req.user.id,
-    likedBy: [],
+    author_id: req.user.id,
+    liked_by: [],
     comments: [],
     hidden: false
   });
