@@ -18,7 +18,7 @@ router.get('/github/callback', async (req, res) => {
   var _queryString = await _res.text();
   var json = queryString.parse(_queryString);
   var token = json.access_token;
-  if (!token) return res.status(400).json({ error: 'Invalid code' });
+  if (!token) return res.status(400).json({ ok: false, error: 'Invalid code' });
   var authClient = new Octokit({ auth: `token ${token}` });
   var { data } = await authClient.users.getAuthenticated({});
   var emails = await authClient.users.listEmails({});
