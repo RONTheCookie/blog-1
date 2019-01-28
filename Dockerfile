@@ -3,6 +3,6 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN apk add yarn
 RUN yarn
-COPY ..
+COPY . .
 EXPOSE 3000
 CMD ["yarn", "start"]
