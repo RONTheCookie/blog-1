@@ -3,7 +3,8 @@ var express = require('express'),
 var router = express.Router();
 
 router.get('/:id', async (req, res) => {
-  var user = await r.table('users').get(req.params.id);
+  var user = await r.table('users').get(parseInt(req.params.id, 10));
+  if (!user) return res.status(404).json({ ok: false, error: 'Unknown user' });
   delete user.email;
   res.json({ ok: true, user });
 });
