@@ -23,6 +23,5 @@ app.use(ejwt({ secret: constants.JWT_PRIVATE, credentialsRequired: false }), asy
 
 app.use('/api/auth', require('./routes/auth.js'));
 app.use('/api/posts', require('./routes/posts.js'));
-app.use('/api/users', require('./routes/users.js'));
 
 app.listen(constants.PORT, () => console.log('blog api listening on port ' + constants.PORT));
