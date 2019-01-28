@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 3000;
 
 var app = express();
 
+var renderer = new marked.Renderer();
+require('marked-images')(renderer);
+
 app.use(helmet());
 app.use(morgan('dev'));
 
@@ -22,7 +25,7 @@ app.get('/posts/:slug', (req, res) => {
   var lines = content.split('\n');
   var meta = lines[0];
   lines.shift();
-  res.render('post', { content: marked(lines.join('\n').trim()), meta: JSON.parse(meta) });
+  res.render('post', { content: marked(lines.join('\n').trim(), { renderer }), meta: JSON.parse(meta) });
 });
 
 app.listen(PORT, () => console.log('blog listening on ' + PORT));

@@ -39,4 +39,5 @@ When I installed Arch, I installed the [KDE Plasma](https://wiki.archlinux.org/i
 
 In the end, I am so glad I replaced the proprietary Windows spyware with a free, DIY Linux distro. It took a couple of days to configure everything but the benefits of using free software far outweigh the issues I experienced during installation. Everything works now, and I can easily install new packages, update packages and develop software. As for the gaming, well I've yet to try that, but you can expect a blog post about that soon.
 
-*Here's a picture of my current desktop
+*Here's a picture of my current desktop (open in new tab)*  
+![My desktop](https://i.imgur.com/DevdzKs.jpg "450x300")
